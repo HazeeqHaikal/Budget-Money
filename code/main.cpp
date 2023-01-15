@@ -44,12 +44,6 @@ int main() {
         cin >> ready;
     }
 
-    cout << "Thank you for using our program." << endl;	
-
-    cout << "Thank you for using our program." << endl;
-
-    system("pause");
-
     cout << "Thank you for using our program." << endl;
 
     system("pause");
