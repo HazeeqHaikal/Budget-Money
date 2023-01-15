@@ -51,6 +51,7 @@ int main() {
 
         cout << "Do you want to continue? (Y/N): ";
         cin >> ready;
+        ready = toupper(ready);
     }
 
     cout << "\nThank you for using our program." << endl;
