@@ -9,7 +9,6 @@ float cashFlow(float income, float spending) {
 }
 
 int main() {
-
     int months, categorySpend;
     float income, spending, flowOfCash;
     char ready;
@@ -20,7 +19,7 @@ int main() {
 
     cout << "Hello, " << username << " " << endl;
     cout << "Welcome to our program." << endl;
-    cout << "Are you ready to start the program? (Y/N): " << endl;
+    cout << "Are you ready to start the program? (Y/N): ";
     cin >> ready;
 
     cout << "1. January\n2. February\n3. March\n4. April\n5. May\n6. June\n7. July\n8. August\n9. September\n10. October\n11. November\n12. December\nChoose a month: ";
@@ -37,6 +36,10 @@ int main() {
 
     flowOfCash = cashFlow(income, spending);
     cout << "Your cash flow for this month is: RM " << flowOfCash << endl;
+
+    cout << "Thank you for using our program." << endl;
+
+    system("pause");
 
     return 0;
 }
