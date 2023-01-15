@@ -3,14 +3,12 @@
 
 using namespace std;
 
-float cashFlow(float income, float spending)
-{
+float cashFlow(float income, float spending){
     float cashFlow = income - spending;
     return cashFlow;
 }
 
-int main()
-{
+int main() {
 
     int months, categorySpend;
     float income, spending, flowOfCash;
@@ -23,7 +21,7 @@ int main()
 
     cout << "Hello, " << username << " " << endl;
     cout << "Welcome to our program." << endl;
-    cout << "Are you ready to start the program? (Y/N): " << endl;
+    cout << "Are you ready to start the program? (Y/N): ";
     cin >> ready;
 
     while (ready == 'Y')
@@ -48,6 +46,10 @@ int main()
     }
 
     cout << "Thank you for using our program." << endl;	
+
+    cout << "Thank you for using our program." << endl;
+
+    system("pause");
 
     return 0;
 }
