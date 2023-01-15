@@ -31,6 +31,7 @@ int main() {
     cout << "Welcome to our program." << endl;
     cout << "Are you ready to start the program? (Y/N): ";
     cin >> ready;
+    ready = toupper(ready);
 
     while (ready == 'Y') {
         cout << "1. January\n2. February\n3. March\n4. April\n5. May\n6. June\n7. July\n8. August\n9. September\n10. October\n11. November\n12. December\nChoose a month: ";
@@ -50,6 +51,7 @@ int main() {
 
         cout << "Do you want to continue? (Y/N): ";
         cin >> ready;
+        ready = toupper(ready);
     }
 
     cout << "\nThank you for using our program." << endl;
