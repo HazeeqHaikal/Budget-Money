@@ -9,6 +9,7 @@ float cashFlow(float income, float spending) {
 }
 
 int main() {
+
     int months, categorySpend;
     float income, spending, flowOfCash;
     char ready;
