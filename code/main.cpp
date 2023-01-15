@@ -9,7 +9,6 @@ float cashFlow(float income, float spending){
 }
 
 int main() {
-
     int months, categorySpend;
     float income, spending, flowOfCash;
     char ready;
@@ -46,6 +45,10 @@ int main() {
     }
 
     cout << "Thank you for using our program." << endl;	
+
+    cout << "Thank you for using our program." << endl;
+
+    system("pause");
 
     cout << "Thank you for using our program." << endl;
 
