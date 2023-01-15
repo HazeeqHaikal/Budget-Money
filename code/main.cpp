@@ -11,6 +11,16 @@ float cashFlow(float income, float spending) {
 int main() {
     int months, categorySpend;
     float income, spending, flowOfCash;
+    char ready;
+    string username;
+
+    cout << "Enter your name: ";
+    getline(cin, username);
+
+    cout << "Hello, " << username << " " << endl;
+    cout << "Welcome to our program." << endl;
+    cout << "Are you ready to start the program? (Y/N): " << endl;
+    cin >> ready;
 
     cout << "1. January\n2. February\n3. March\n4. April\n5. May\n6. June\n7. July\n8. August\n9. September\n10. October\n11. November\n12. December\nChoose a month: ";
     cin >> months;
