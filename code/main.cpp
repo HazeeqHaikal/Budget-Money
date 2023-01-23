@@ -34,7 +34,11 @@ int main() {
     ready = toupper(ready);
 
     while (ready == 'Y') {
-        cout << "1. January\n2. February\n3. March\n4. April\n5. May\n6. June\n7. July\n8. August\n9. September\n10. October\n11. November\n12. December\nChoose a month: ";
+        cout << " 1. January    2. February     3. March " << endl;
+        cout << " 4. April      5. May          6. June " << endl;
+        cout << " 7. July       8. August       9. September " << endl;
+        cout << " 10. October   11. November    12. December " << endl;
+        cout << "Enter the month: ";
         cin >> months;
 
         cout << "Enter your income: RM ";
