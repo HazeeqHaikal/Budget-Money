@@ -44,7 +44,10 @@ int main() {
         cout << "Enter your income: RM ";
         cin >> income;
 
-        cout << "1. Food\n2. Housing\n3. Utilities\n4. Transportation\n5. Clothing\n6. Health Care\n7. Entertainment\n8. Personal Care\n9. Education\n10. Miscellaneous\nChoose category for your spending: ";
+        cout << " 1. Food       2. Housing          3. Utilities        4. Transportation " << endl;
+        cout << " 5. Clothing   6. Health Care      7. Entertainment    8. Personal Care " << endl;
+        cout << " 9. Education  10. Miscellaneous " << endl;
+        cout << " Choose category for your spending: ";
         cin >> categorySpend;
 
         cout << "Enter your spending: RM ";
