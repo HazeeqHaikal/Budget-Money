@@ -8,9 +8,14 @@ float cashFlow(float income, float spending) {
     return cashFlow;
 }
 
+float average(float spending) {
+    float average = spending / 30.0;
+    return average;
+}
+
 int main() {
     int months, categorySpend;
-    float income, spending, flowOfCash;
+    float income, spending, flowOfCash, averageSpending;
     char ready;
     string username;
     string categorySpendData[10][2] = {{"Food", "0"}, {"Housing", "0"}, {"Utilities", "0"}, {"Transportation", "0"}, {"Clothing", "0"}, {"Health Care", "0"}, {"Entertainment", "0"}, {"Personal Care", "0"}, {"Education", "0"}, {"Miscellaneous", "0"}};
@@ -92,12 +97,14 @@ int main() {
         flowOfCash = cashFlow(income, spending);
         cout << "Your cash flow for this month is: RM " << flowOfCash << endl;
 
+        averageSpending = average(spending);
+        cout << "Your average spending for this month is: RM " << averageSpending << endl;
+
         cout << "Do you want to continue? (Y/N): ";
         cin >> ready;
         ready = toupper(ready);
         system("cls");
     }
-
     // cout << "Your spending for each category: " << endl;
     string spendMost;
     float spendMostValue = 0;
