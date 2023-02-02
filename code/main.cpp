@@ -59,10 +59,10 @@ int main() {
         cout << "Do you want to continue? (Y/N): ";
         cin >> ready;
         ready = toupper(ready);
+        system("cls");
     }
 
     cout << "\nThank you for using our program." << endl;
-
     system("pause");
 
     return 0;
