@@ -105,7 +105,12 @@ int main() {
         ready = toupper(ready);
         system("cls");
     }
-    // cout << "Your spending for each category: " << endl;
+    cout << "Your spending for each category: " << endl;
+    for (int i = 0; i < 10; i++) {
+        cout << categorySpendData[i][0] << ": RM " << categorySpendData[i][1] << endl;
+    }
+
+    cout << endl;
     string spendMost;
     float spendMostValue = 0;
     for (int i = 0; i < 10; i++) {
