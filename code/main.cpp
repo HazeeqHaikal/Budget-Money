@@ -8,9 +8,14 @@ float cashFlow(float income, float spending) {
     return cashFlow;
 }
 
+float average(float spending) {
+    float average = spending / 30.0;
+    return average;
+}
+
 int main() {
     int months, categorySpend;
-    float income, spending, flowOfCash;
+    float income, spending, flowOfCash, averageSpending;
     char ready;
     string end;
     string username;
@@ -55,6 +60,9 @@ int main() {
 
         flowOfCash = cashFlow(income, spending);
         cout << "Your cash flow for this month is: RM " << flowOfCash << endl;
+
+        averageSpending = average(spending);
+        cout << "Your average spending for this month is: RM " << averageSpending << endl;
 
         cout << "Do you want to continue? (Y/N): ";
         cin >> ready;
