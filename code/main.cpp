@@ -35,30 +35,37 @@ int main() {
     }
 
     cout << "\nHello, " << username << " " << endl;
+    // prompt user to start the program or not
     cout << "Are you ready to start the program? (Y/N): ";
     cin >> ready;
+    // make the prompt case insensitive
     ready = toupper(ready);
 
     while (ready == 'Y') {
+        // prompt user to enter the month
         cout << " 1. January    2. February     3. March " << endl;
         cout << " 4. April      5. May          6. June " << endl;
         cout << " 7. July       8. August       9. September " << endl;
         cout << " 10. October   11. November    12. December " << endl;
-        cout << "Enter the month: ";
+        cout << "Enter the month you want to record: ";
         cin >> months;
 
+        // prompt user to enter the income
         cout << "Enter your income: RM ";
         cin >> income;
 
+        // prompt user to enter the spending
         cout << " 1. Food       2. Housing          3. Utilities        4. Transportation " << endl;
         cout << " 5. Clothing   6. Health Care      7. Entertainment    8. Personal Care " << endl;
         cout << " 9. Education  10. Miscellaneous " << endl;
         cout << " Choose category for your spending: ";
         cin >> categorySpend;
 
+        // prompt user to enter the spending
         cout << "Enter your spending: RM ";
         cin >> spending;
 
+    
         switch (categorySpend) {
             case 1:
                 categorySpendData[0][1] = to_string(stof(categorySpendData[0][1]) + spending);
