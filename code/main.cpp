@@ -65,7 +65,6 @@ int main() {
         cout << "Enter your spending: RM ";
         cin >> spending;
 
-    
         switch (categorySpend) {
             case 1:
                 categorySpendData[0][1] = to_string(stof(categorySpendData[0][1]) + spending);
@@ -114,6 +113,7 @@ int main() {
 
         averageSpending = average(spending);
         cout << "Your average spending for this month is: RM " << averageSpending << endl;
+        // to show the average spending for each month choose by the user
 
         cout << "Do you want to continue? (Y/N): ";
         cin >> ready;
@@ -123,6 +123,7 @@ int main() {
     cout << "Your spending for each category: " << endl;
     for (int i = 0; i < 10; i++) {
         cout << categorySpendData[i][0] << ": RM " << categorySpendData[i][1] << endl;
+        /*display on how much you spend on each category*/
     }
 
     cout << endl;
