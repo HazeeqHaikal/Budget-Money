@@ -20,7 +20,9 @@ int main() {
     string username;
     string categorySpendData[10][2] = {{"Food", "0"}, {"Housing", "0"}, {"Utilities", "0"}, {"Transportation", "0"}, {"Clothing", "0"}, {"Health Care", "0"}, {"Entertainment", "0"}, {"Personal Care", "0"}, {"Education", "0"}, {"Miscellaneous", "0"}};
 
+    cout << "Welcome to our program." << endl;
     cout << "Enter your name: ";
+
     getline(cin, username);
 
     // capitalize each first letter of the name
@@ -33,7 +35,6 @@ int main() {
     }
 
     cout << "\nHello, " << username << " " << endl;
-    cout << "Welcome to our program." << endl;
     cout << "Are you ready to start the program? (Y/N): ";
     cin >> ready;
     ready = toupper(ready);
@@ -96,6 +97,13 @@ int main() {
 
         flowOfCash = cashFlow(income, spending);
         cout << "Your cash flow for this month is: RM " << flowOfCash << endl;
+        if (flowOfCash > 0) {
+            cout << "You have a positive cash flow for this month." << endl;
+        } else if (flowOfCash < 0) {
+            cout << "You have a negative cash flow for this month. Please make sure to plan your budget more carefully" << endl;
+        } else {
+            cout << "You have a zero cash flow for this month. Please make sure to plan your budget more carefully" << endl;
+        }
 
         averageSpending = average(spending);
         cout << "Your average spending for this month is: RM " << averageSpending << endl;
