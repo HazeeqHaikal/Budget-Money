@@ -67,6 +67,7 @@ int main(int argc, char** argv) {
         cout << " 4. April      5. May          6. June " << endl;
         cout << " 7. July       8. August       9. September " << endl;
         cout << " 10. October   11. November    12. December " << endl;
+        cout << " Choose month for your spending: ";
         cin >> month;
 
         // prompt user to enter the income
@@ -110,7 +111,7 @@ int main(int argc, char** argv) {
 
     // Calculate the vertical dimensions of the graph,
     // fitting it to the available space as necessary.
-    double domain = max_element(0, 12);
+    double domain = 12;
     // double domain = *max_element(months.begin(), months.end());
     double divisor = (domain < (max_lines - 3)) ? 1 : domain / (max_lines - 3);
     int nlines = (domain < (max_lines - 3)) ? (int)domain : (max_lines - 3);
