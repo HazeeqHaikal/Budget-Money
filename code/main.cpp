@@ -15,6 +15,35 @@ float average(float spending) {
     return average;
 }
 
+string totalEachMonth(string month, float spending) {
+    if (month == '1')
+    totalEachMonth[1-1][1] = to_string(stof(totalEachMonth[1 - 1][1]) + spending);
+    if (month == '2')
+    totalEachMonth[2-1][2] = to_string(stof(totalEachMonth[2 - 1][1]) + spending);
+    if (month == '3')
+    totalEachMonth[3-1][3] = to_string(stof(totalEachMonth[3 - 1][1]) + spending);
+    if (month == '4')
+    totalEachMonth[4-1][4] = to_string(stof(totalEachMonth[4 - 1][1]) + spending);
+    if (month == '5')
+    totalEachMonth[5-1][5] = to_string(stof(totalEachMonth[5 - 1][1]) + spending);
+    if (month == '6')
+    totalEachMonth[6-1][6] = to_string(stof(totalEachMonth[6 - 1][1]) + spending);
+    if (month == '7')
+    totalEachMonth[7-1][7] = to_string(stof(totalEachMonth[7 - 1][1]) + spending);
+    if (month == '8')
+    totalEachMonth[8-1][8] = to_string(stof(totalEachMonth[8 - 1][1]) + spending);
+    if (month == '9')
+    totalEachMonth[9-1][9] = to_string(stof(totalEachMonth[9 - 1][1]) + spending);
+    if (month == '10')
+    totalEachMonth[10-1][10] = to_string(stof(totalEachMonth[10 - 1][1]) + spending);
+    if (month == '11')
+    totalEachMonth[11-1][11] = to_string(stof(totalEachMonth[11 - 1][1]) + spending);
+    if (month == '12')
+    totalEachMonth[12-1][12] = to_string(stof(totalEachMonth[12 - 1][1]) + spending);
+
+    return totalEachMonth;
+}
+
 int main() {
     int months, categorySpend;
     float income, spending, flowOfCash, averageSpending;
