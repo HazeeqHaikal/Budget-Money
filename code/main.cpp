@@ -105,7 +105,8 @@ int main() {
         }
 
         flowOfCash = cashFlow(income, spending);
-        cout << "Your cash flow for this month is: RM " << flowOfCash << endl;
+        cout << fixed << showpoint;
+        cout << "Your cash flow for this month is: RM " << setprecision(2) << flowOfCash << endl;
         if (flowOfCash > 0) {
             cout << "You have a positive cash flow for this month." << endl;
         } else if (flowOfCash < 0) {
@@ -115,7 +116,8 @@ int main() {
         }
 
         averageSpending = average(spending);
-        cout << "Your average daily spending for this month is: RM " << averageSpending << endl;
+        cout << fixed << showpoint;
+        cout << "Your average daily spending for this month is: RM " << setprecision(2) << averageSpending << endl;
         //to show the average spending for each month choose by the user
 
         cout << "Do you want to continue? (Y/N): ";
@@ -123,8 +125,10 @@ int main() {
         ready = toupper(ready);
         system("cls");
     }
-    cout << "Your spending for each category: " << endl;
+    cout << fixed << showpoint;
+    cout << "Your spending for each category: " << setprecision(2) << endl;
     for (int i = 0; i < 10; i++) {
+
         cout << categorySpendData[i][0] << ": RM " << fixed << setprecision(2) << stof(categorySpendData[i][1]) << endl;/*display on how much
         you spend on each category*/
     }
