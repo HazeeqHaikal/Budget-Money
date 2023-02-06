@@ -60,7 +60,7 @@ int main(int argc, char** argv) {
     cin >> ready;
     // make the prompt case insensitive
     ready = toupper(ready);
-
+    
     while (ready == 'Y') {
         // prompt user to enter the month
         cout << " 1. January    2. February     3. March " << endl;
