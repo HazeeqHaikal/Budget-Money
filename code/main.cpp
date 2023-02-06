@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <fstream>
 
 using namespace std;
 
@@ -116,7 +117,7 @@ int main() {
 
         averageSpending = average(spending);
         cout << fixed << showpoint;
-        cout << "Your average spending for this month is: RM " << setprecision(2) << averageSpending << endl;
+        cout << "Your average daily spending for this month is: RM " << setprecision(2) << averageSpending << endl;
         //to show the average spending for each month choose by the user
 
         cout << "Do you want to continue? (Y/N): ";
@@ -127,7 +128,8 @@ int main() {
     cout << fixed << showpoint;
     cout << "Your spending for each category: " << setprecision(2) << endl;
     for (int i = 0; i < 10; i++) {
-        cout << fixed << categorySpendData[i][0] << ": RM " << setprecision(2) << stof(categorySpendData[i][1]) << endl;/*display on how much
+
+        cout << categorySpendData[i][0] << ": RM " << fixed << setprecision(2) << stof(categorySpendData[i][1]) << endl;/*display on how much
         you spend on each category*/
     }
 
