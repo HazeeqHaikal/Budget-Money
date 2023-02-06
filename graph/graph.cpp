@@ -85,7 +85,7 @@ int main(int argc, char** argv) {
         auto s = std::to_string(n);
         std::string d;
         for (auto& c : s) d += digits[c - '0'];
-        std::cout << std::setw(3) << "x" << d;
+        std::cout << setw(3) << "x" << d;
     }
     std::cout << "\n";
 }

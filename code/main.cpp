@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 
+
 // The isatty() function will tell us whether standard input is piped or not.
 #ifdef _WIN32
 #include <io.h>
@@ -34,7 +35,7 @@ int main(int argc, char** argv) {
     // Maximum screen height
     int max_lines = (argc == 2) ? stoi(argv[1]) : 25;
     int month, categorySpend;
-    float income, spending, flowOfCash, averageSpending;
+    float income, spending, flowOfCash, averageSpending, maxSpending = 0;
     string totalEachMonth[12][2] = {{"Jan", "0"}, {"Feb", "0"}, {"Mar", "0"}, {"Apr", "0"}, {"May", "0"}, {"Jun", "0"}, {"Jul", "0"}, {"Aug", "0"}, {"Sep", "0"}, {"Oct", "0"}, {"Nov", "0"}, {"Dec", "0"}};
     char ready;
     string username;
@@ -111,8 +112,13 @@ int main(int argc, char** argv) {
 
     // Calculate the vertical dimensions of the graph,
     // fitting it to the available space as necessary.
-    double domain = 12;
-    // double domain = *max_element(months.begin(), months.end());
+    // double domain = 12;
+    for (int i = 0; i < 12; i++) {
+        if (stof(totalEachMonth[i][1]) > maxSpending) {
+            maxSpending = stof(totalEachMonth[i][1]);
+        }
+    }
+    double domain = maxSpending;
     double divisor = (domain < (max_lines - 3)) ? 1 : domain / (max_lines - 3);
     int nlines = (domain < (max_lines - 3)) ? (int)domain : (max_lines - 3);
 
@@ -139,7 +145,7 @@ int main(int argc, char** argv) {
         for (int i = 0; i < 12; i++) {
             for (auto x : totalEachMonth[i]) {
                 // change the value of x[1] to int
-                x[1] = (int)x[1];
+                x[1] = x[1] - '0';
                 if (x[1] > y2)
                     cout << full_bar;
                 else if (x[1] > y1)
@@ -165,9 +171,9 @@ int main(int argc, char** argv) {
     cout << x_axis_cap << "\n";
 
     // (draw labels under the X-axis)
-    cout << string(8, ' ');
+    cout << string(5, ' ');
     for (int n = 0; n < 12; n++) {
-        cout << setw(3) << totalEachMonth[n][0];
+        cout << setw(5) << totalEachMonth[n][0];
     }
     cout << "\n";
 
