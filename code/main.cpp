@@ -327,6 +327,13 @@ int main() {
                 }
                 break;
             case 5:
+                cout << " 1. January    2. February     3. March " << endl;
+                cout << " 4. April      5. May          6. June " << endl;
+                cout << " 7. July       8. August       9. September " << endl;
+                cout << " 10. October   11. November    12. December " << endl;
+                cout << "Enter the month you want to see your cash flow: ";
+                cin >> months;
+                
                 flowOfCash =
                     cashFlow(income, stof(totalEachMonth[months - 1][1]));
                 cout << fixed << showpoint;
