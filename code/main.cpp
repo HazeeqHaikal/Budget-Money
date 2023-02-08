@@ -15,54 +15,11 @@ float average(float spending) {
     return average;
 }
 
-void calcTotalEachMonth(int month, float spending, string totalEachMonth[12][2]) {
-    if (month == 1) {
-        totalEachMonth[1 - 1][1] =
-            to_string(stof(totalEachMonth[1 - 1][1]) + spending);
-    } else if (month == 2){
-        totalEachMonth[2 - 1][2] =
-            to_string(stof(totalEachMonth[2 - 1][1]) + spending);
-    }
-    else if (month == 3){
-        totalEachMonth[3 - 1][3] = to_string(stof(totalEachMonth[3 - 1][1]) + spending);
-    }
-    else if (month == 4){
-        totalEachMonth[4 - 1][4] = to_string(stof(totalEachMonth[4 - 1][1]) + spending);
-    }
-    else if (month == 5){
-        totalEachMonth[5 - 1][5] = to_string(stof(totalEachMonth[5 - 1][1]) + spending);
-    }
-    else if (month == 6){ 
-        totalEachMonth[6 - 1][6] = to_string(stof(totalEachMonth[6 - 1][1]) + spending);
-    }
-    else if (month == 7){ 
-        totalEachMonth[7 - 1][7] = to_string(stof(totalEachMonth[7 - 1][1]) + spending);
-    }
-    else if (month == 8){ 
-        totalEachMonth[8 - 1][8] = to_string(stof(totalEachMonth[8 - 1][1]) + spending);
-    }
-    else if (month == 9){ 
-        totalEachMonth[9 - 1][9] = to_string(stof(totalEachMonth[9 - 1][1]) + spending);
-    }
-    else if (month == 10){ 
-        totalEachMonth[10 - 1][10] = to_string(stof(totalEachMonth[10 - 1][1]) + spending);
-    }
-    else if (month == 11){ 
-        totalEachMonth[11 - 1][11] = to_string(stof(totalEachMonth[11 - 1][1]) + spending);
-    }
-    else if (month == 12){ 
-        totalEachMonth[12 - 1][12] = to_string(stof(totalEachMonth[12 - 1][1]) + spending);
-    }
-    else {
-        cout << "Invalid month" << endl;
-    }
-}
-
 int main() {
-    int months, categorySpend;
+    int months, categorySpend, ready;
     float income, spending, flowOfCash, averageSpending;
-    char ready;
     string username;
+    char prompt;
     string totalEachMonth[12][2] = {{"Jan", "0"}, {"Feb", "0"}, {"Mar", "0"},
                                     {"Apr", "0"}, {"May", "0"}, {"Jun", "0"},
                                     {"Jul", "0"}, {"Aug", "0"}, {"Sep", "0"},
@@ -88,13 +45,12 @@ int main() {
     }
 
     cout << "\nHello, " << username << " " << endl;
-    // prompt user to start the program or not
-    cout << "Are you ready to start the program? (Y/N): ";
-    cin >> ready;
-    // make the prompt case insensitive
-    ready = toupper(ready);
 
-    while (ready == 'Y') {
+    cout << "Do you want to start the program? Enter 'Y' to continue: ";
+    cin >> prompt;
+    prompt = toupper(prompt);
+
+    while (prompt == 'Y') {
         // prompt user to enter the month
         cout << " 1. January    2. February     3. March " << endl;
         cout << " 4. April      5. May          6. June " << endl;
@@ -102,17 +58,104 @@ int main() {
         cout << " 10. October   11. November    12. December " << endl;
         cout << "Enter the month you want to record: ";
         cin >> months;
-
-        // prompt user to enter the income
-        cout << "Enter your income: RM ";
-        cin >> income;
+        switch (months) {
+            case 1:
+                if (totalEachMonth[0][1] == "0") {
+                    // prompt user to enter the income
+                    cout << "Enter your income: RM ";
+                    cin >> income;
+                }
+                break;
+            case 2:
+                if (totalEachMonth[1][1] == "0") {
+                    // prompt user to enter the income
+                    cout << "Enter your income: RM ";
+                    cin >> income;
+                }
+                break;
+            case 3:
+                if (totalEachMonth[2][1] == "0") {
+                    // prompt user to enter the income
+                    cout << "Enter your income: RM ";
+                    cin >> income;
+                }
+                break;
+            case 4:
+                if (totalEachMonth[3][1] == "0") {
+                    // prompt user to enter the income
+                    cout << "Enter your income: RM ";
+                    cin >> income;
+                }
+                break;
+            case 5:
+                if (totalEachMonth[4][1] == "0") {
+                    // prompt user to enter the income
+                    cout << "Enter your income: RM ";
+                    cin >> income;
+                }
+                break;
+            case 6:
+                if (totalEachMonth[5][1] == "0") {
+                    // prompt user to enter the income
+                    cout << "Enter your income: RM ";
+                    cin >> income;
+                }
+                break;
+            case 7:
+                if (totalEachMonth[6][1] == "0") {
+                    // prompt user to enter the income
+                    cout << "Enter your income: RM ";
+                    cin >> income;
+                }
+                break;
+            case 8:
+                if (totalEachMonth[7][1] == "0") {
+                    // prompt user to enter the income
+                    cout << "Enter your income: RM ";
+                    cin >> income;
+                }
+                break;
+            case 9:
+                if (totalEachMonth[8][1] == "0") {
+                    // prompt user to enter the income
+                    cout << "Enter your income: RM ";
+                    cin >> income;
+                }
+                break;
+            case 10:
+                if (totalEachMonth[9][1] == "0") {
+                    // prompt user to enter the income
+                    cout << "Enter your income: RM ";
+                    cin >> income;
+                }
+                break;
+            case 11:
+                if (totalEachMonth[10][1] == "0") {
+                    // prompt user to enter the income
+                    cout << "Enter your income: RM ";
+                    cin >> income;
+                }
+                break;
+            case 12:
+                if (totalEachMonth[11][1] == "0") {
+                    // prompt user to enter the income
+                    cout << "Enter your income: RM ";
+                    cin >> income;
+                }
+                break;
+            default:
+                cout << "Invalid input." << endl;
+                break;
+        }
 
         // prompt user to enter the spending
-        cout << " 1. Food       2. Housing          3. Utilities        4. "
-                "Transportation "
+        cout << " 1. Food       2. Housing          3. Utilities       "
+                " 4. "
+                "Transportation"
              << endl;
-        cout << " 5. Clothing   6. Health Care      7. Entertainment    8. "
-                "Personal Care "
+        cout << " 5. Clothing   6. Health Care      7. Entertainment   "
+                " 8. "
+                "Personal Care"
              << endl;
         cout << " 9. Education  10. Miscellaneous " << endl;
         cout << " Choose category for your spending: ";
@@ -168,62 +211,166 @@ int main() {
                 break;
         }
 
-        flowOfCash = cashFlow(income, spending);
-        cout << fixed << showpoint;
-        cout << "Your cash flow for this month is: RM " << setprecision(2)
-             << flowOfCash << endl;
-        if (flowOfCash > 0) {
-            cout << "You have a positive cash flow for this month." << endl;
-        } else if (flowOfCash < 0) {
-            cout << "You have a negative cash flow for this month. Please make "
-                    "sure to plan your budget more carefully"
-                 << endl;
-        } else {
-            cout << "You have a zero cash flow for this month. Please make "
-                    "sure to plan your budget more carefully"
-                 << endl;
+        switch (months) {
+            case 1:
+                totalEachMonth[0][1] =
+                    to_string(stof(totalEachMonth[0][1]) + spending);
+                break;
+            case 2:
+                totalEachMonth[1][1] =
+                    to_string(stof(totalEachMonth[1][1]) + spending);
+                break;
+            case 3:
+                totalEachMonth[2][1] =
+                    to_string(stof(totalEachMonth[2][1]) + spending);
+                break;
+            case 4:
+                totalEachMonth[3][1] =
+                    to_string(stof(totalEachMonth[3][1]) + spending);
+                break;
+            case 5:
+                totalEachMonth[4][1] =
+                    to_string(stof(totalEachMonth[4][1]) + spending);
+                break;
+            case 6:
+                totalEachMonth[5][1] =
+                    to_string(stof(totalEachMonth[5][1]) + spending);
+                break;
+            case 7:
+                totalEachMonth[6][1] =
+                    to_string(stof(totalEachMonth[6][1]) + spending);
+                break;
+            case 8:
+                totalEachMonth[7][1] =
+                    to_string(stof(totalEachMonth[7][1]) + spending);
+                break;
+            case 9:
+                totalEachMonth[8][1] =
+                    to_string(stof(totalEachMonth[8][1]) + spending);
+                break;
+            case 10:
+                totalEachMonth[9][1] =
+                    to_string(stof(totalEachMonth[9][1]) + spending);
+                break;
+            case 11:
+                totalEachMonth[10][1] =
+                    to_string(stof(totalEachMonth[10][1]) + spending);
+                break;
+            case 12:
+                totalEachMonth[11][1] =
+                    to_string(stof(totalEachMonth[11][1]) + spending);
+                break;
+            default:
+                cout << "Invalid month" << endl;
+                break;
         }
 
-        calcTotalEachMonth(months, spending, totalEachMonth);
+        cout << endl;
+        cout << "Do you want to record another spending? (Y/N): ";
+        cin >> prompt;
+        prompt = toupper(prompt);
 
-        for (int i = 0; i < 12; i++) {
-            cout << totalEachMonth[i][0] << ": RM " << totalEachMonth[i][1]
+        if (prompt == 'N') {
+            cout << "1. Check your average spending for each category" << endl;
+            cout << "2. Check your average daily spending for each month"
                  << endl;
+            cout << "3. Check your spending for each category" << endl;
+            cout << "4. Check your spending for each month" << endl;
+            cout << "5. Check your cash flow" << endl;
+
+            cout << "Please choose an option: ";
+            cin >> ready;
+
+            switch (ready) {
+                case 1:
+                    cout << fixed << showpoint;
+                    cout << "Your spending for each category: "
+                         << setprecision(2) << endl;
+                    for (int i = 0; i < 10; i++) {
+                        cout << categorySpendData[i][0] << ": RM " << fixed
+                             << setprecision(2) << stof(categorySpendData[i][1])
+                             << endl;
+                    }
+                    break;
+                case 2:
+                    cout << fixed << showpoint;
+                    cout << "Your average daily spending for each month: "
+                         << setprecision(2) << endl;
+                    for (int i = 0; i < 12; i++) {
+                        cout << totalEachMonth[i][0] << ": RM " << fixed
+                             << setprecision(2)
+                             << stof(totalEachMonth[i][1]) / 30.0 << endl;
+                    }
+                    break;
+                case 3:
+                    cout << fixed << showpoint;
+                    cout << "Your spending for each category: "
+                         << setprecision(2) << endl;
+                    for (int i = 0; i < 10; i++) {
+                        cout << categorySpendData[i][0] << ": RM " << fixed
+                             << setprecision(2) << stof(categorySpendData[i][1])
+                             << endl;
+                    }
+                    break;
+                case 4:
+                    cout << fixed << showpoint;
+                    cout << "Your spending for each month: " << setprecision(2)
+                         << endl;
+                    for (int i = 0; i < 12; i++) {
+                        cout << totalEachMonth[i][0] << ": RM " << fixed
+                             << setprecision(2) << stof(totalEachMonth[i][1])
+                             << endl;
+                    }
+                    break;
+                case 5:
+                    flowOfCash =
+                        cashFlow(income, stof(totalEachMonth[months - 1][1]));
+                    cout << fixed << showpoint;
+                    cout << "Your cash flow for this month is: RM "
+                         << setprecision(2) << flowOfCash << endl;
+                    if (flowOfCash > 0) {
+                        cout << "You have a positive cash flow for this month."
+                             << endl;
+                    } else if (flowOfCash < 0) {
+                        cout << "You have a negative cash flow for this month. "
+                                "Please "
+                                "make sure to plan your budget more carefully"
+                             << endl;
+                    } else {
+                        cout << "You have a zero cash flow for this month. "
+                                "Please "
+                                "make "
+                                "sure to plan your budget more carefully"
+                             << endl;
+                    }
+                    break;
+                default:
+                    cout << "Invalid option" << endl;
+                    break;
+            }
         }
+        // system("cls");
 
-        averageSpending = average(spending);
-        cout << fixed << showpoint;
-        cout << "Your average daily spending for this month is: RM "
-             << setprecision(2) << averageSpending << endl;
-        // to show the average spending for each month choose by the user
+        // cout << "Do you want to continue the program? Enter 'Y' to continue:
+        // "; cin >> prompt; prompt = toupper(prompt); if (prompt == 'Y') {
+        //     system("cls");
+        //     cout << endl;
+        //     cout << "1. Check your average spending for each category" <<
+        //     endl; cout << "2. Check your average daily spending for each
+        //     month"
+        //          << endl;
+        //     cout << "3. Check your spending for each category" << endl;
+        //     cout << "4. Check your spending for each month" << endl;
+        //     cout << "5. Check your cash flow" << endl;
+        //     cout << "Please choose an option: ";
 
-        cout << "Do you want to continue? (Y/N): ";
-        cin >> ready;
-        ready = toupper(ready);
-        system("cls");
-    }
-    cout << fixed << showpoint;
-    cout << "Your spending for each category: " << setprecision(2) << endl;
-    for (int i = 0; i < 10; i++) {
-        cout << categorySpendData[i][0] << ": RM " << fixed << setprecision(2)
-             << stof(categorySpendData[i][1]) << endl; /*display on how much
-you spend on each category*/
-    }
-
-    cout << endl;
-    string spendMost;
-    float spendMostValue = 0;
-    for (int i = 0; i < 10; i++) {
-        if (stof(categorySpendData[i][1]) > spendMostValue) {
-            spendMostValue = stof(categorySpendData[i][1]);
-            spendMost = categorySpendData[i][0];
-        }
+        //     cin >> ready;
+        // } else {
+        //     cout << "Thankyou for using our program!" << endl;
+        //     break;
+        // }
     }
 
-    cout << "You spend the most on " << spendMost << " with RM "
-         << spendMostValue << endl;
-
-    cout << "\nThank you for using our program." << endl;
     system("pause");
 
     return 0;
