@@ -326,7 +326,8 @@ int main() {
                     flowOfCash =
                         cashFlow(income, stof(totalEachMonth[months - 1][1]));
                     cout << fixed << showpoint;
-                    cout << "Your cash flow for this month is: RM "
+                    cout << "Your cash flow for "
+                         << totalEachMonth[months - 1][0] << " is: RM "
                          << setprecision(2) << flowOfCash << endl;
                     if (flowOfCash > 0) {
                         cout << "You have a positive cash flow for this month."
@@ -349,26 +350,6 @@ int main() {
                     break;
             }
         }
-        // system("cls");
-
-        // cout << "Do you want to continue the program? Enter 'Y' to continue:
-        // "; cin >> prompt; prompt = toupper(prompt); if (prompt == 'Y') {
-        //     system("cls");
-        //     cout << endl;
-        //     cout << "1. Check your average spending for each category" <<
-        //     endl; cout << "2. Check your average daily spending for each
-        //     month"
-        //          << endl;
-        //     cout << "3. Check your spending for each category" << endl;
-        //     cout << "4. Check your spending for each month" << endl;
-        //     cout << "5. Check your cash flow" << endl;
-        //     cout << "Please choose an option: ";
-
-        //     cin >> ready;
-        // } else {
-        //     cout << "Thankyou for using our program!" << endl;
-        //     break;
-        // }
     }
 
     system("pause");
