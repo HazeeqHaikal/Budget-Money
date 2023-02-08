@@ -20,6 +20,10 @@ int main() {
     float income, spending, flowOfCash, averageSpending;
     string username;
     char prompt;
+    string totalIncomeEachMonth[12][2] = {
+        {"Jan", "0"}, {"Feb", "0"}, {"Mar", "0"}, {"Apr", "0"},
+        {"May", "0"}, {"Jun", "0"}, {"Jul", "0"}, {"Aug", "0"},
+        {"Sep", "0"}, {"Oct", "0"}, {"Nov", "0"}, {"Dec", "0"}};
     string totalEachMonth[12][2] = {{"Jan", "0"}, {"Feb", "0"}, {"Mar", "0"},
                                     {"Apr", "0"}, {"May", "0"}, {"Jun", "0"},
                                     {"Jul", "0"}, {"Aug", "0"}, {"Sep", "0"},
@@ -147,6 +151,7 @@ int main() {
                 cout << "Invalid input." << endl;
                 break;
         }
+        totalIncomeEachMonth[months - 1][1] = income;
 
         // prompt user to enter the spending
         cout << " 1. Food       2. Housing          3. Utilities       "
@@ -276,11 +281,10 @@ int main() {
 
     char promptCheck = 'Y';
     while (promptCheck == 'Y') {
-        cout << "1. Check your average spending for each category" << endl;
+        cout << "1. Check your spending for each category" << endl;
         cout << "2. Check your average daily spending for each month" << endl;
-        cout << "3. Check your spending for each category" << endl;
-        cout << "4. Check your spending for each month" << endl;
-        cout << "5. Check your cash flow" << endl;
+        cout << "3. Check your spending for each month" << endl;
+        cout << "4. Check your cash flow" << endl;
 
         cout << "Please choose an option: ";
         cin >> ready;
@@ -308,16 +312,6 @@ int main() {
                 break;
             case 3:
                 cout << fixed << showpoint;
-                cout << "Your spending for each category: " << setprecision(2)
-                     << endl;
-                for (int i = 0; i < 10; i++) {
-                    cout << categorySpendData[i][0] << ": RM " << fixed
-                         << setprecision(2) << stof(categorySpendData[i][1])
-                         << endl;
-                }
-                break;
-            case 4:
-                cout << fixed << showpoint;
                 cout << "Your spending for each month: " << setprecision(2)
                      << endl;
                 for (int i = 0; i < 12; i++) {
@@ -326,16 +320,16 @@ int main() {
                          << endl;
                 }
                 break;
-            case 5:
+            case 4:
                 cout << " 1. January    2. February     3. March " << endl;
                 cout << " 4. April      5. May          6. June " << endl;
                 cout << " 7. July       8. August       9. September " << endl;
                 cout << " 10. October   11. November    12. December " << endl;
                 cout << "Enter the month you want to see your cash flow: ";
                 cin >> months;
-                
+
                 flowOfCash =
-                    cashFlow(income, stof(totalEachMonth[months - 1][1]));
+                    cashFlow(stof(totalIncomeEachMonth[months - 1][1]), stof(totalEachMonth[months - 1][1]));
                 cout << fixed << showpoint;
                 cout << "Your cash flow for " << totalEachMonth[months - 1][0]
                      << " is: RM " << setprecision(2) << flowOfCash << endl;
