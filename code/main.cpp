@@ -151,7 +151,7 @@ int main() {
                 cout << "Invalid input." << endl;
                 break;
         }
-        totalIncomeEachMonth[months - 1][1] = income;
+        totalIncomeEachMonth[months - 1][1] = to_string(income);
 
         // prompt user to enter the spending
         cout << " 1. Food       2. Housing          3. Utilities       "
@@ -328,8 +328,8 @@ int main() {
                 cout << "Enter the month you want to see your cash flow: ";
                 cin >> months;
 
-                flowOfCash =
-                    cashFlow(stof(totalIncomeEachMonth[months - 1][1]), stof(totalEachMonth[months - 1][1]));
+                flowOfCash = cashFlow(stof(totalIncomeEachMonth[months - 1][1]),
+                                      stof(totalEachMonth[months - 1][1]));
                 cout << fixed << showpoint;
                 cout << "Your cash flow for " << totalEachMonth[months - 1][0]
                      << " is: RM " << setprecision(2) << flowOfCash << endl;
