@@ -21,18 +21,10 @@ int main() {
     string username;
     char prompt;
     string totalIncomeEachMonth[12][2] = {
-        {"Jan", "0"}, {"Feb", "0"}, {"Mar", "0"}, {"Apr", "0"},
-        {"May", "0"}, {"Jun", "0"}, {"Jul", "0"}, {"Aug", "0"},
-        {"Sep", "0"}, {"Oct", "0"}, {"Nov", "0"}, {"Dec", "0"}};
-    string totalEachMonth[12][2] = {{"Jan", "0"}, {"Feb", "0"}, {"Mar", "0"},
-                                    {"Apr", "0"}, {"May", "0"}, {"Jun", "0"},
-                                    {"Jul", "0"}, {"Aug", "0"}, {"Sep", "0"},
-                                    {"Oct", "0"}, {"Nov", "0"}, {"Dec", "0"}};
+        {"Jan", "0"}, {"Feb", "0"}, {"Mar", "0"}, {"Apr", "0"}, {"May", "0"}, {"Jun", "0"}, {"Jul", "0"}, {"Aug", "0"}, {"Sep", "0"}, {"Oct", "0"}, {"Nov", "0"}, {"Dec", "0"}};
+    string totalEachMonth[12][2] = {{"Jan", "0"}, {"Feb", "0"}, {"Mar", "0"}, {"Apr", "0"}, {"May", "0"}, {"Jun", "0"}, {"Jul", "0"}, {"Aug", "0"}, {"Sep", "0"}, {"Oct", "0"}, {"Nov", "0"}, {"Dec", "0"}};
     string categorySpendData[10][2] = {
-        {"Food", "0"},           {"Housing", "0"},       {"Utilities", "0"},
-        {"Transportation", "0"}, {"Clothing", "0"},      {"Health Care", "0"},
-        {"Entertainment", "0"},  {"Personal Care", "0"}, {"Education", "0"},
-        {"Miscellaneous", "0"}};
+        {"Food", "0"}, {"Housing", "0"}, {"Utilities", "0"}, {"Transportation", "0"}, {"Clothing", "0"}, {"Health Care", "0"}, {"Entertainment", "0"}, {"Personal Care", "0"}, {"Education", "0"}, {"Miscellaneous", "0"}};
 
     cout << "Welcome to our program." << endl;
     cout << "Enter your name: ";
@@ -62,95 +54,15 @@ int main() {
         cout << " 10. October   11. November    12. December " << endl;
         cout << "Enter the month you want to record: ";
         cin >> months;
-        switch (months) {
-            case 1:
-                if (totalEachMonth[0][1] == "0") {
-                    // prompt user to enter the income
-                    cout << "Enter your income: RM ";
-                    cin >> income;
-                }
-                break;
-            case 2:
-                if (totalEachMonth[1][1] == "0") {
-                    // prompt user to enter the income
-                    cout << "Enter your income: RM ";
-                    cin >> income;
-                }
-                break;
-            case 3:
-                if (totalEachMonth[2][1] == "0") {
-                    // prompt user to enter the income
-                    cout << "Enter your income: RM ";
-                    cin >> income;
-                }
-                break;
-            case 4:
-                if (totalEachMonth[3][1] == "0") {
-                    // prompt user to enter the income
-                    cout << "Enter your income: RM ";
-                    cin >> income;
-                }
-                break;
-            case 5:
-                if (totalEachMonth[4][1] == "0") {
-                    // prompt user to enter the income
-                    cout << "Enter your income: RM ";
-                    cin >> income;
-                }
-                break;
-            case 6:
-                if (totalEachMonth[5][1] == "0") {
-                    // prompt user to enter the income
-                    cout << "Enter your income: RM ";
-                    cin >> income;
-                }
-                break;
-            case 7:
-                if (totalEachMonth[6][1] == "0") {
-                    // prompt user to enter the income
-                    cout << "Enter your income: RM ";
-                    cin >> income;
-                }
-                break;
-            case 8:
-                if (totalEachMonth[7][1] == "0") {
-                    // prompt user to enter the income
-                    cout << "Enter your income: RM ";
-                    cin >> income;
-                }
-                break;
-            case 9:
-                if (totalEachMonth[8][1] == "0") {
-                    // prompt user to enter the income
-                    cout << "Enter your income: RM ";
-                    cin >> income;
-                }
-                break;
-            case 10:
-                if (totalEachMonth[9][1] == "0") {
-                    // prompt user to enter the income
-                    cout << "Enter your income: RM ";
-                    cin >> income;
-                }
-                break;
-            case 11:
-                if (totalEachMonth[10][1] == "0") {
-                    // prompt user to enter the income
-                    cout << "Enter your income: RM ";
-                    cin >> income;
-                }
-                break;
-            case 12:
-                if (totalEachMonth[11][1] == "0") {
-                    // prompt user to enter the income
-                    cout << "Enter your income: RM ";
-                    cin >> income;
-                }
-                break;
-            default:
-                cout << "Invalid input." << endl;
-                break;
+        cout << endl;
+        if (months > 12 || months < 1 || totalEachMonth[months - 1][1] != "0") {
+            cout << "Invalid month" << endl;
+            break;
+        } else {
+            cout << "Enter your income: RM ";
+            cin >> income;
         }
+
         totalIncomeEachMonth[months - 1][1] = to_string(income);
 
         // prompt user to enter the spending
@@ -169,105 +81,21 @@ int main() {
         // prompt user to enter the spending
         cout << "Enter your spending: RM ";
         cin >> spending;
-
-        switch (categorySpend) {
-            case 1:
-                categorySpendData[0][1] =
-                    to_string(stof(categorySpendData[0][1]) + spending);
-                break;
-            case 2:
-                categorySpendData[1][1] =
-                    to_string(stof(categorySpendData[1][1]) + spending);
-                break;
-            case 3:
-                categorySpendData[2][1] =
-                    to_string(stof(categorySpendData[2][1]) + spending);
-                break;
-            case 4:
-                categorySpendData[3][1] =
-                    to_string(stof(categorySpendData[3][1]) + spending);
-                break;
-            case 5:
-                categorySpendData[4][1] =
-                    to_string(stof(categorySpendData[4][1]) + spending);
-                break;
-            case 6:
-                categorySpendData[5][1] =
-                    to_string(stof(categorySpendData[5][1]) + spending);
-                break;
-            case 7:
-                categorySpendData[6][1] =
-                    to_string(stof(categorySpendData[6][1]) + spending);
-                break;
-            case 8:
-                categorySpendData[7][1] =
-                    to_string(stof(categorySpendData[7][1]) + spending);
-                break;
-            case 9:
-                categorySpendData[8][1] =
-                    to_string(stof(categorySpendData[8][1]) + spending);
-                break;
-            case 10:
-                categorySpendData[9][1] =
-                    to_string(stof(categorySpendData[9][1]) + spending);
-                break;
-            default:
-                cout << "Invalid input." << endl;
-                break;
+        if (spending < 1 || spending > 10) {
+            cout << "Invalid input" << endl;
+            break;
+        } else {
+            categorySpendData[categorySpend - 1][1] =
+                to_string(stof(categorySpendData[categorySpend - 1][1]) +
+                          spending);
         }
 
-        switch (months) {
-            case 1:
-                totalEachMonth[0][1] =
-                    to_string(stof(totalEachMonth[0][1]) + spending);
-                break;
-            case 2:
-                totalEachMonth[1][1] =
-                    to_string(stof(totalEachMonth[1][1]) + spending);
-                break;
-            case 3:
-                totalEachMonth[2][1] =
-                    to_string(stof(totalEachMonth[2][1]) + spending);
-                break;
-            case 4:
-                totalEachMonth[3][1] =
-                    to_string(stof(totalEachMonth[3][1]) + spending);
-                break;
-            case 5:
-                totalEachMonth[4][1] =
-                    to_string(stof(totalEachMonth[4][1]) + spending);
-                break;
-            case 6:
-                totalEachMonth[5][1] =
-                    to_string(stof(totalEachMonth[5][1]) + spending);
-                break;
-            case 7:
-                totalEachMonth[6][1] =
-                    to_string(stof(totalEachMonth[6][1]) + spending);
-                break;
-            case 8:
-                totalEachMonth[7][1] =
-                    to_string(stof(totalEachMonth[7][1]) + spending);
-                break;
-            case 9:
-                totalEachMonth[8][1] =
-                    to_string(stof(totalEachMonth[8][1]) + spending);
-                break;
-            case 10:
-                totalEachMonth[9][1] =
-                    to_string(stof(totalEachMonth[9][1]) + spending);
-                break;
-            case 11:
-                totalEachMonth[10][1] =
-                    to_string(stof(totalEachMonth[10][1]) + spending);
-                break;
-            case 12:
-                totalEachMonth[11][1] =
-                    to_string(stof(totalEachMonth[11][1]) + spending);
-                break;
-            default:
-                cout << "Invalid month" << endl;
-                break;
+        if (months < 1 || months > 12) {
+            cout << "Invalid month" << endl;
+            break;
+        } else {
+            totalEachMonth[months - 1][1] =
+                to_string(stof(totalEachMonth[months - 1][1]) + spending);
         }
 
         cout << endl;
